@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Bank Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-white shadow-md">
+        <h1 class="text-5xl text-center mt-8 py-4 font-bold text-gray-700">
+            Welcome to Your <span class="text-indigo-800">Personal Bank</span>
+        </h1>
+    </header>
+    <main class="flex flex-col items-center mt-10 space-y-8">
+        <section class="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div
+                    class="p-6 bg-gray-100 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:bg-green-200">
+                    <h4 class="text-xl font-bold text-gray-800">Total Deposits</h4>
+                    <h2 class="text-3xl font-semibold text-gray-900">$<span id="deposit-total">0.00</span></h2>
+                </div>
+                <div
+                    class="p-6 bg-gray-100 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:bg-red-200">
+                    <h4 class="text-xl font-bold text-gray-800">Total Withdrawals</h4>
+                    <h2 class="text-3xl font-semibold text-gray-900">$<span id="withdraw-total">0.00</span></h2>
+                </div>
+                <div
+                    class="p-6 bg-gray-100 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:bg-sky-200">
+                    <h4 class="text-xl font-bold text-gray-800">Current Balance</h4>
+                    <h2 class="text-3xl font-semibold text-gray-900">$<span id="balance-total">0.00</span></h2>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div
+                    class="p-6 bg-gray-100 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:bg-gray-200">
+                    <h4 class="text-xl font-bold text-gray-800">Make a Deposit</h4>
+                    <input id="deposit-field"
+                        class="mt-5 py-3 px-4 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500"
+                        type="number" placeholder="$0.00">
+                    <button id="btn-deposit"
+                        class="mt-6 bg-indigo-800 text-white py-2 px-6 rounded-lg hover:bg-indigo-900 transition-colors duration-300">Deposit</button>
+                </div>
+                <div
+                    class="p-6 bg-gray-100 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:bg-gray-200">
+                    <h4 class="text-xl font-bold text-gray-800">Make a Withdrawal</h4>
+                    <input id="withdraw-field"
+                        class="mt-5 py-3 px-4 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500"
+                        type="number" placeholder="$0.00">
+                    <button id="btn-withdraw"
+                        class="mt-6 bg-green-500 text-white py-2 px-6 rounded-lg hover:bg-green-600 transition-colors duration-300">Withdraw</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./script2.js"></script>
+</body>
+
+</html>
