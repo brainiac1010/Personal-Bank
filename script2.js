@@ -1,4 +1,3 @@
-
 document.getElementById('btn-deposit').addEventListener('click', function () {
     const depositField = document.getElementById('deposit-field');
     const newDepositAmountString = depositField.value;
@@ -9,21 +8,18 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     const previousDepositTotal = parseFloat(previousDepositTotalString);
 
     const currentDepositTotal = previousDepositTotal + newDepositAmount;
-    depositTotalElement.innerText = currentDepositTotal;
+    depositTotalElement.innerText = formatNumber(currentDepositTotal);
 
     const balanceTotal = document.getElementById('balance-total');
     const previousBalanceTotalString = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 
-
-
     const currentBalanceTotal = previousBalanceTotal + newDepositAmount;
-    balanceTotal.innerText = currentBalanceTotal;
+    balanceTotal.innerText = formatNumber(currentBalanceTotal);
 
     depositField.value = '';
 });
 
-// Handle withdrawal
 document.getElementById('btn-withdraw').addEventListener('click', function () {
     const withdrawField = document.getElementById('withdraw-field');
     const newWithdrawStrAmount = withdrawField.value;
@@ -43,10 +39,14 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     }
 
     const currentWithdrawTotal = previousWithdraw + newWithdrawAmount;
-    withdrawTotalElement.innerText = currentWithdrawTotal;
+    withdrawTotalElement.innerText = formatNumber(currentWithdrawTotal);
 
     const finalBalance = previousBalanceTotal - newWithdrawAmount;
-    balanceTotalElement.innerText = finalBalance;
+    balanceTotalElement.innerText = formatNumber(finalBalance);
 
     withdrawField.value = '';
 });
+
+function formatNumber(num) {
+    return num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
